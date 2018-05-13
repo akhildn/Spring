@@ -1,0 +1,21 @@
+Customer:
+1. Login/logout
+2.View tickets (his/her tickets of any group)
+3. Create new ticket - id, summary, details, created date/time, status, group, priority(1-5), assignee, requestor, problem category
+
+
+
+Service Agent:
+1. Login/logout
+2. View tickets (of assigned group)
+3. Update status of ticket
+
+
+
+Admin:
+
+1. Login/logout
+2. Create customers/service agents - id, username, password, email, contact no, group (only for agent),
+3. View tickets (all tickets)
+4. Create groups  - id, name
+5. Add categories
