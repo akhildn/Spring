@@ -1,0 +1,18 @@
+
+<br><br><br><br><br><br>
+<div>
+<table width="50%" align="center">
+<tr><td><a href="#!/addCustomer"><b>Add</b></a></td>
+<td colspan="5" align="right">
+
+<input type="text" name="search" size="10" value=""/>&nbsp;<input type="submit" value="Search"/>
+
+</td></tr>
+<tr><td colspan="6">&nbsp;</td></tr>
+<tr bgcolor="grey"><th>Customer Id</th><th>Username</th><th>Password</th><th>Email</th><th>Contact No.</th><th>&nbsp;</th></tr>
+
+<tr ng-repeat="customer in customerController.customers" bgcolor="pink"><td align="center">{{customer.id}}</td><td>{{customer.username}}</td><td>{{customer.password}}</td><td>{{customer.email}}</td><td>{{customer.contactno}}</td><td><a href="">Edit</a>&nbsp;&nbsp;<a href="">Delete</a></tr>
+
+</table>
+</div>
+  

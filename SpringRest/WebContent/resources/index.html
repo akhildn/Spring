@@ -1,0 +1,51 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<script src="app.js"></script>
+  	<script src="login/login.js"></script> 
+  	<script src="customer/customer.js"></script> 	
+</head>
+<body ng-app="springRest" ng-controller="LoginController as loginController">
+<div ng-controller="CustomerController as customerController">
+<table width="100%" bgcolor="pink" border="0" cellpadding="0" cellspacing="0">
+<tr><td align="right" valign="top" height="20px">
+<div id="loginDiv"  ng-hide="loginController.success">
+<a href="#!/login"><font color="blue"><b>Login</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+<font color="red"><b>&nbsp;</b></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+<div id="logoutDiv"  ng-show="loginController.success">
+Welcome&nbsp;<b>{{loginController.user.username}}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+<a href="#" ng-click="loginController.logout()"><font color="blue"><b>Logout</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</td></tr>
+<tr><td align="center" height="20px"><h1>Service Desk - Angular</h1></td></tr>
+</table>
+
+<table width="100%" bgcolor="grey" height="20px" border="0">
+<tr><td width="15%">&nbsp;</td><td>
+<div id="adminMenu" ng-show="loginController.success && loginController.user.username=='admin'">
+<a href=""><b>Tickets</b></a>&nbsp;&nbsp;
+<a href="" ng-click="customerController.getCustomers()"><b>Customers</b></a>&nbsp;&nbsp;
+<a href=""><b>Agents</b></a>&nbsp;&nbsp;
+<a href=""><b>Groups</b></a>&nbsp;&nbsp;
+<a href=""><b>Problem Categories</b></a>&nbsp;&nbsp;
+</div>
+<div id="customerMenu" ng-show="loginController.success && loginController.user.username=='customer'">
+<a href=""><b>Tickets</b></a>&nbsp;&nbsp;
+</div>
+<div id="agentMenu" ng-show="loginController.success && loginController.user.username=='agent'">
+<a href=""><b>Tickets</b></a>&nbsp;&nbsp;
+</div>
+
+</td></tr>
+</table>
+
+<div ng-view></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<br><br><br><br><br><br>
+<div>
+<table width="30%" align="center" border="0">
+
+<tr bgcolor="grey"><td colspan="2"><b>Login</b></td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td colspan="3">&nbsp;<font color="red">&nbsp;</font></td></tr>
+<tr><td><b>Username</b></td>
+<td><input type="text" name="username" ng-model="loginController.user.username"/></td>
+<td></td></tr>
+<tr><td><b>Password</b></td>
+<td><input type="password" name="password" ng-model="loginController.user.password"/></td>
+<td></td></tr>
+<tr><td><b>User Type</b></td>
+<td><nobr></nobr><input type="radio" name="userType" value="admin" ng-model="loginController.user.userType"/>&nbsp;Admin&nbsp;&nbsp;<input type="radio" name="userType" value="customer" ng-model="loginController.user.userType"/>&nbsp;Customer&nbsp;&nbsp;<input type="radio" name="userType" value="agent" ng-model="loginController.user.userType"/>&nbsp;Agent&nbsp;&nbsp;</nobr></td>
+<td></td></tr>
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr><td colspan="3" align="center"><input type="button" value="Submit" ng-Click = "loginController.validate()"/></td></tr>
+</table>
+</div>

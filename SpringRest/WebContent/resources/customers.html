@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="customerApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/customers.js"></script>    
+  </head>
+  <body>
+    <h2>Customers</h2>
+    <div ng-controller="CustomerController as customerList">
+           
+      <ul>
+		<li ng-repeat="customer in customerList.customers">
+		{{customer.username}}&nbsp;{{customer.password}}
+		</li>
+	  
+	  </ul>
+	  
+      <form ng-submit="customerList.addCustomer()">
+        <input type="text" ng-model="customerList.firstName"  size="30"
+               placeholder="add first name">
+			   <input type="text" ng-model="customerList.lastName"  size="30"
+               placeholder="add last name">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+  </body>
+</html>
